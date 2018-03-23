@@ -1,0 +1,171 @@
+<definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:ServerBinus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:ServerBinus">
+<types>
+<xsd:schema targetNamespace="urn:ServerBinus">
+<xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/"/>
+<xsd:import namespace="http://schemas.xmlsoap.org/wsdl/"/>
+</xsd:schema>
+</types>
+<message name="sendTDPRequest">
+<part name="username" type="xsd:string"/>
+<part name="password" type="xsd:string"/>
+<part name="xmlTDP" type="xsd:string"/>
+</message>
+<message name="sendTDPResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<message name="sendSIUPRequest">
+<part name="username" type="xsd:string"/>
+<part name="password" type="xsd:string"/>
+<part name="xmlSIUP" type="xsd:string"/>
+</message>
+<message name="sendSIUPResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<message name="sendIUTMRequest">
+<part name="username" type="xsd:string"/>
+<part name="password" type="xsd:string"/>
+<part name="xmlIUTM" type="xsd:string"/>
+</message>
+<message name="sendIUTMResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<message name="sendSTPWRequest">
+<part name="username" type="xsd:string"/>
+<part name="password" type="xsd:string"/>
+<part name="xmlSTPW" type="xsd:string"/>
+</message>
+<message name="sendSTPWResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<message name="sendTDGRequest">
+<part name="username" type="xsd:string"/>
+<part name="password" type="xsd:string"/>
+<part name="xmlTDG" type="xsd:string"/>
+</message>
+<message name="sendTDGResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<message name="sendTESTRequest">
+<part name="string" type="xsd:string"/>
+</message>
+<message name="sendTESTResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<message name="CheckIzinRequest">
+<part name="username" type="xsd:string"/>
+<part name="password" type="xsd:string"/>
+<part name="npwp" type="xsd:string"/>
+<part name="kdizin" type="xsd:string"/>
+</message>
+<message name="CheckIzinResponse">
+<part name="return" type="xsd:string"/>
+</message>
+<portType name="ServerBinusPortType">
+<operation name="sendTDP">
+<documentation>Send TDP From Client</documentation>
+<input message="tns:sendTDPRequest"/>
+<output message="tns:sendTDPResponse"/>
+</operation>
+<operation name="sendSIUP">
+<documentation>Send SIUP From Client</documentation>
+<input message="tns:sendSIUPRequest"/>
+<output message="tns:sendSIUPResponse"/>
+</operation>
+<operation name="sendIUTM">
+<documentation>Send IUTM From Client</documentation>
+<input message="tns:sendIUTMRequest"/>
+<output message="tns:sendIUTMResponse"/>
+</operation>
+<operation name="sendSTPW">
+<documentation>Send STPW From Client</documentation>
+<input message="tns:sendSTPWRequest"/>
+<output message="tns:sendSTPWResponse"/>
+</operation>
+<operation name="sendTDG">
+<documentation>Send TDG From Client</documentation>
+<input message="tns:sendTDGRequest"/>
+<output message="tns:sendTDGResponse"/>
+</operation>
+<operation name="sendTEST">
+<documentation>Send Test Parameter From Client</documentation>
+<input message="tns:sendTESTRequest"/>
+<output message="tns:sendTESTResponse"/>
+</operation>
+<operation name="CheckIzin">
+<documentation>Check License</documentation>
+<input message="tns:CheckIzinRequest"/>
+<output message="tns:CheckIzinResponse"/>
+</operation>
+</portType>
+<binding name="ServerBinusBinding" type="tns:ServerBinusPortType">
+<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+<operation name="sendTDP">
+<soap:operation soapAction="urn:sendTDP#sendTDP" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:sendTDP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:sendTDP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="sendSIUP">
+<soap:operation soapAction="urn:sendSIUP#sendSIUP" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:sendSIUP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:sendSIUP" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="sendIUTM">
+<soap:operation soapAction="urn:sendIUTM#sendIUTM" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:sendIUTM" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:sendIUTM" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="sendSTPW">
+<soap:operation soapAction="urn:sendSTPW#sendSTPW" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:sendSTPW" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:sendSTPW" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="sendTDG">
+<soap:operation soapAction="urn:sendTDG#sendTDG" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:sendTDG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:sendTDG" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="sendTEST">
+<soap:operation soapAction="urn:sendTEST#sendTEST" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:sendTEST" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:sendTEST" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+<operation name="CheckIzin">
+<soap:operation soapAction="urn:CheckIzin#CheckIzin" style="rpc"/>
+<input>
+<soap:body use="encoded" namespace="urn:CheckIzin" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</input>
+<output>
+<soap:body use="encoded" namespace="urn:CheckIzin" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+</output>
+</operation>
+</binding>
+<service name="ServerBinus">
+<port name="ServerBinusPort" binding="tns:ServerBinusBinding">
+<soap:address location="http://sipo.kemendag.go.id/ws/server.php"/>
+</port>
+</service>
+</definitions>
